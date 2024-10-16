@@ -1,17 +1,41 @@
-# flutter_dock
+# FlutterDock
 
-A new Flutter project.
+FlutterDock is a macOS-style draggable dock implementation in Flutter. This project demonstrates how to create a customizable, animated dock with draggable and sortable icons.
+
+## Features
+
+- Draggable and sortable dock icons
+- Smooth animations when reordering icons
+- Customizable icon appearance
+- Responsive design
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+To run this project:
 
-A few resources to get you started if this is your first Flutter project:
+1. Ensure you have Flutter installed on your machine
+2. Clone this repository: `git clone git@github.com:kalkidanderso/FlutterDock.git`
+3. Navigate to the project directory: `cd FlutterDock`
+4. Get dependencies: `flutter pub get`
+5. Run the app: `flutter run -d chrome`
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Usage
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# FlutterDock
+The main `Dock` widget can be customized with different icons and styles. Example usage:
+
+```dart
+Dock<IconData>(
+  items: const [
+    Icons.person,
+    Icons.message,
+    Icons.call,
+    Icons.camera,
+    Icons.photo,
+  ],
+  builder: (IconData icon, bool isDragging) {
+    return DockItem(
+      icon: icon,
+      isDragging: isDragging,
+    );
+  },
+)
